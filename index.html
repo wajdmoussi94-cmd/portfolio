@@ -833,8 +833,9 @@ footer span{color:var(--cyan)}
         <a href="mailto:wajd.moussi@email.com" class="btn btn-primary" style="margin-bottom:0.75rem;width:100%;justify-content:center">
           Send Me a Message
         </a>
-        <a href="RESUME.PDF" onclick="downloadResume()" class="btn btn-primary">
-        Download CV
+        <!-- Update this in both the Hero and Contact sections -->
+      <a href="javascript:void(0)" onclick="downloadResume()" class="btn btn-primary">
+          <span>📄</span> Download CV
       </a>
       </div>
     </div>
@@ -920,6 +921,17 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 reveals.forEach(r => observer.observe(r));
+
+  function downloadResume() {
+    // This creates a hidden link, sets the file path, and clicks it
+    const link = document.createElement('a');
+    link.href = 'RESUME.PDF'; // The path to your file in the repo
+    link.download = 'RESUME.PDF'; // The name the file will have when downloaded
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+  
 </script>
 </body>
 </html>
