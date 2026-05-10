@@ -925,8 +925,7 @@ reveals.forEach(r => observer.observe(r));
   function downloadResume() {
     // This creates a hidden link, sets the file path, and clicks it
     const link = document.createElement('a');
-    link.href = 'RESUME.PDF'; // The path to your file in the repo
-    link.download = 'RESUME.PDF'; // The name the file will have when downloaded
+    link.href = './RESUME.PDF'; // The path to your file in the repo
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
